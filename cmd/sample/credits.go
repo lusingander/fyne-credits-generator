@@ -1,6 +1,8 @@
 package main
 
 import (
+	"net/url"
+
 	"fyne.io/fyne"
 	"fyne.io/fyne/layout"
 	"fyne.io/fyne/widget"
@@ -15,12 +17,17 @@ func CreditsWindow(app fyne.App) fyne.Window {
 
 func CreditsContainer() fyne.CanvasObject {
 	list := widget.NewVBox()
-	header := widget.NewLabel("")
+	nameLabel := widget.NewLabel("")
+	urlLabel := widget.NewHyperlink("", nil)
+	header := widget.NewVBox(nameLabel, urlLabel)
 	entry := widget.NewMultiLineEntry()
 	for _, c := range credits {
 		c := c
 		button := widget.NewButton(c.name, func() {
-			header.SetText(c.name + "\n" + c.url)
+			nameLabel.SetText(c.name)
+			u, _ := url.Parse(c.url)
+			urlLabel.SetText(c.url)
+			urlLabel.SetURL(u)
 			entry.SetText(c.text)
 		})
 		list.Append(button)
