@@ -27,6 +27,9 @@ button := widget.NewButton("Show credits", func() {
 ```
 See the [sample application](./cmd/sample) for an example.
 
+And you can show a window like this:
+<img src="./resource/screenshot.png">
+
 ## Requirements
 
 Application must use go modules for dependency management.
