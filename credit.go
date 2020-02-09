@@ -13,10 +13,12 @@ const (
 	splitterText    = "----------------------------------------------------------------"
 )
 
+// Credit represents the license text, repository name and URL.
 type Credit struct {
 	Name, URL, Text string
 }
 
+// Collect returns the license information collected and converted to Credit type.
 func Collect() ([]*Credit, error) {
 	buf, err := runGoCredits()
 	if err != nil {
