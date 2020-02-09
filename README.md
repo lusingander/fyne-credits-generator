@@ -25,6 +25,7 @@ button := widget.NewButton("Show credits", func() {
     CreditsWindow(fyne.CurrentApp()).Show()
 })
 ```
+See the [sample application](./cmd/sample) for an example.
 
 ## Requirements
 
