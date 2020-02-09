@@ -1,4 +1,4 @@
-fyne-credits-generaotor
+fyne-credits-generator
 ====
 
 Automatically generate credits window for the [Fyne](https://fyne.io/) application.
