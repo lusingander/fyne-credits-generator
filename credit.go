@@ -30,6 +30,7 @@ func Collect() ([]*Credit, error) {
 			credits = append(credits, c)
 		}
 	}
+	credits = append(credits, ownCredit)
 	return credits, nil
 }
 
