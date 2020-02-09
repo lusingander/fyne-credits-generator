@@ -69,6 +69,4 @@ type credit struct {
 }
 
 var credits = []*credit{
-%s
-}
-`
+%s}`
