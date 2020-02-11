@@ -9,7 +9,7 @@ import (
 func createCreditsGo(credits []*credit.Credit) string {
 	vars := ""
 	for _, c := range credits {
-		vars += fmt.Sprintf(`	&credit{
+		vars += fmt.Sprintf(`	{
 		"%s",
 		"%s",
 		`+"`%s`"+`,

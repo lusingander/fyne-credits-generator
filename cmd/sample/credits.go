@@ -48,7 +48,7 @@ type credit struct {
 }
 
 var credits = []*credit{
-	&credit{
+	{
 		"Go (the standard library)",
 		"https://golang.org/",
 		`
@@ -82,7 +82,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 `,
 	},
-	&credit{
+	{
 		"fyne.io/fyne",
 		"https://fyne.io/fyne",
 		`
@@ -115,7 +115,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 `,
 	},
-	&credit{
+	{
 		"github.com/Songmu/gocredits",
 		"https://github.com/Songmu/gocredits",
 		`
@@ -144,7 +144,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 `,
 	},
-	&credit{
+	{
 		"github.com/davecgh/go-spew",
 		"https://github.com/davecgh/go-spew",
 		`
@@ -166,7 +166,7 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 `,
 	},
-	&credit{
+	{
 		"github.com/fsnotify/fsnotify",
 		"https://github.com/fsnotify/fsnotify",
 		`
@@ -201,7 +201,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 `,
 	},
-	&credit{
+	{
 		"github.com/go-gl/gl",
 		"https://github.com/go-gl/gl",
 		`
@@ -228,7 +228,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 `,
 	},
-	&credit{
+	{
 		"github.com/go-gl/glfw",
 		"https://github.com/go-gl/glfw",
 		`
@@ -262,7 +262,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 `,
 	},
-	&credit{
+	{
 		"github.com/goki/freetype",
 		"https://github.com/goki/freetype",
 		`
@@ -281,7 +281,7 @@ testdata/COPYING file for details.
 
 `,
 	},
-	&credit{
+	{
 		"github.com/nfnt/resize",
 		"https://github.com/nfnt/resize",
 		`
@@ -301,7 +301,7 @@ THIS SOFTWARE.
 
 `,
 	},
-	&credit{
+	{
 		"github.com/pmezard/go-difflib",
 		"https://github.com/pmezard/go-difflib",
 		`
@@ -335,7 +335,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 `,
 	},
-	&credit{
+	{
 		"github.com/srwiley/oksvg",
 		"https://github.com/srwiley/oksvg",
 		`
@@ -371,7 +371,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 `,
 	},
-	&credit{
+	{
 		"github.com/srwiley/rasterx",
 		"https://github.com/srwiley/rasterx",
 		`
@@ -407,7 +407,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 `,
 	},
-	&credit{
+	{
 		"github.com/stretchr/testify",
 		"https://github.com/stretchr/testify",
 		`
@@ -435,7 +435,7 @@ SOFTWARE.
 
 `,
 	},
-	&credit{
+	{
 		"golang.org/x/exp",
 		"https://golang.org/x/exp",
 		`
@@ -469,7 +469,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 `,
 	},
-	&credit{
+	{
 		"golang.org/x/image",
 		"https://golang.org/x/image",
 		`
@@ -503,7 +503,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 `,
 	},
-	&credit{
+	{
 		"golang.org/x/mobile",
 		"https://golang.org/x/mobile",
 		`
@@ -537,7 +537,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 `,
 	},
-	&credit{
+	{
 		"golang.org/x/net",
 		"https://golang.org/x/net",
 		`
@@ -571,7 +571,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 `,
 	},
-	&credit{
+	{
 		"golang.org/x/sys",
 		"https://golang.org/x/sys",
 		`
@@ -605,7 +605,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 `,
 	},
-	&credit{
+	{
 		"golang.org/x/text",
 		"https://golang.org/x/text",
 		`
@@ -639,7 +639,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 `,
 	},
-	&credit{
+	{
 		"fyne-credits-generator",
 		"https://github.com/lusingander/fyne-credits-generator",
 		`
