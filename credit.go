@@ -18,6 +18,14 @@ type Credit struct {
 	Name, URL, Text string
 }
 
+// [`] => [` + "`" + `]
+const replacedBackquote = "`" + ` + "` + "`" + `" + ` + "`"
+
+// FormattedText returns text that replaces problematic text as code.
+func (c *Credit) FormattedText() string {
+	return strings.Replace(c.Text, "`", replacedBackquote, -1)
+}
+
 // Collect returns the license information collected and converted to Credit type.
 func Collect() ([]*Credit, error) {
 	buf, err := runGoCredits()

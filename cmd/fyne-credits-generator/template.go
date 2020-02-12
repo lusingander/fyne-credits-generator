@@ -14,7 +14,7 @@ func createCreditsGo(credits []*credit.Credit) string {
 		"%s",
 		`+"`%s`"+`,
 	},
-`, c.Name, c.URL, c.Text)
+`, c.Name, c.URL, c.FormattedText())
 	}
 	return fmt.Sprintf(template, vars)
 }
