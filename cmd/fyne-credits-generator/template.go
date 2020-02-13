@@ -29,6 +29,7 @@ import (
 	"fyne.io/fyne/widget"
 )
 
+// CreditsWindow returns a window displaying a list of licenses.
 func CreditsWindow(app fyne.App) fyne.Window {
 	w := app.NewWindow("CREDITS")
 	w.Resize(fyne.NewSize(800, 400))
@@ -36,6 +37,7 @@ func CreditsWindow(app fyne.App) fyne.Window {
 	return w
 }
 
+// CreditsContainer returns a container displaying a list of licenses.
 func CreditsContainer() fyne.CanvasObject {
 	list := widget.NewVBox()
 	nameLabel := widget.NewLabel("")
