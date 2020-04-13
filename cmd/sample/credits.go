@@ -11,9 +11,9 @@ import (
 )
 
 // CreditsWindow returns a window displaying a list of licenses.
-func CreditsWindow(app fyne.App) fyne.Window {
+func CreditsWindow(app fyne.App, size fyne.Size) fyne.Window {
 	w := app.NewWindow("CREDITS")
-	w.Resize(fyne.NewSize(800, 400))
+	w.Resize(size)
 	w.SetContent(CreditsContainer())
 	return w
 }

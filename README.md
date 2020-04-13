@@ -22,7 +22,7 @@ Then, all you have to do is call `CreditsWindow` function in your Fyne applicati
 
 ```go
 button := widget.NewButton("Show credits", func() {
-    CreditsWindow(fyne.CurrentApp()).Show()
+    CreditsWindow(fyne.CurrentApp(), fyne.NewSize(800, 400)).Show()
 })
 ```
 See the [sample application](./cmd/sample) for an example.
