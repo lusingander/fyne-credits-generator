@@ -55,14 +55,15 @@ func CreditsContainer() fyne.CanvasObject {
 		})
 		list.Append(button)
 	}
+	listContainer := widget.NewVScrollContainer(list)
 	text := widget.NewScrollContainer(entry)
 	license := fyne.NewContainerWithLayout(
 		layout.NewBorderLayout(header, nil, nil, nil),
 		header, text,
 	)
 	return fyne.NewContainerWithLayout(
-		layout.NewBorderLayout(nil, nil, list, nil),
-		list, license,
+		layout.NewBorderLayout(nil, nil, listContainer, nil),
+		listContainer, license,
 	)
 }
 
