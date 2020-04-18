@@ -25,10 +25,15 @@ button := widget.NewButton("Show credits", func() {
     CreditsWindow(fyne.CurrentApp(), fyne.NewSize(800, 400)).Show()
 })
 ```
-See the [sample application](./cmd/sample) for an example.
-
 And you can show a window like this:
 <img src="./resource/screenshot.png">
+
+See the [sample application](./cmd/sample) for an example.
+
+More info:
+```
+$ fyne-credits-generator -help
+```
 
 ## Requirements
 
