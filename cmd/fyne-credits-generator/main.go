@@ -10,11 +10,13 @@ import (
 )
 
 var (
+	pname   *string
 	version *bool
 	help    *bool
 )
 
 func parseFlags() {
+	pname = flag.String("package", "main", "set package name")
 	version = flag.Bool("version", false, "print version")
 	help = flag.Bool("help", false, "print help")
 	flag.Parse()
@@ -43,7 +45,7 @@ func run() error {
 	if err != nil {
 		return err
 	}
-	fmt.Println(createCreditsGo(credits))
+	fmt.Println(createCreditsGo(credits, *pname))
 	return nil
 }
 
