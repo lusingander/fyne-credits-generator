@@ -25,6 +25,7 @@ func CreditsContainer() fyne.CanvasObject {
 	urlLabel := widget.NewHyperlink("", nil)
 	header := widget.NewVBox(nameLabel, urlLabel)
 	entry := widget.NewMultiLineEntry()
+	entry.Wrapping = fyne.TextWrapBreak
 	for _, c := range credits {
 		c := c
 		button := widget.NewButton(c.name, func() {
