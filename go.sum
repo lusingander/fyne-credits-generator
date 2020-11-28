@@ -1,8 +1,8 @@
 fyne.io/fyne v1.4.1 h1:+cnzq/AHmKMOab7UTX8eZnDoRMVLNQtdevlDosDr4Qs=
 fyne.io/fyne v1.4.1/go.mod h1:uSW++HWDPD2fviGbKZaEyQ6gCRjRnaTPxKfrbxwaAuE=
 github.com/Kodeworks/golang-image-ico v0.0.0-20141118225523-73f0f4cfade9/go.mod h1:7uhhqiBaR4CpN0k9rMjOtjpcfGd6DG2m04zQxKnWQ0I=
-github.com/Songmu/gocredits v0.1.0 h1:kvF4MYjGXpts+FhxlfmI15mHh0PApML9u7qQU91goYw=
-github.com/Songmu/gocredits v0.1.0/go.mod h1:5OhTh3YD/zUrdWAYuhMO2n3m7Ql+xRAnRLIGUEFABpQ=
+github.com/Songmu/gocredits v0.2.0 h1:AbvFKEbwP5/0qisF0cTlUwVuCtzbJG+ynsXuEUC98vI=
+github.com/Songmu/gocredits v0.2.0/go.mod h1:JBywHzwOmBMF9uidu1EgS3mwVNqZCKOPLPrFd1h7qQo=
 github.com/akavel/rsrc v0.8.0/go.mod h1:uLoCtb9J+EyAqh+26kdrTgmzRBFPGOolLWKpdxkKq+c=
 github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
