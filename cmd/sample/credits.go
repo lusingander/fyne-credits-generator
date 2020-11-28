@@ -4,6 +4,7 @@ package main
 
 import (
 	"net/url"
+	"strings"
 
 	"fyne.io/fyne"
 	"fyne.io/fyne/layout"
@@ -20,30 +21,47 @@ func CreditsWindow(app fyne.App, size fyne.Size) fyne.Window {
 
 // CreditsContainer returns a container displaying a list of licenses.
 func CreditsContainer() fyne.CanvasObject {
-	list := widget.NewVBox()
 	nameLabel := widget.NewLabel("")
 	urlLabel := widget.NewHyperlink("", nil)
 	header := widget.NewVBox(nameLabel, urlLabel)
 	entry := widget.NewMultiLineEntry()
 	entry.Wrapping = fyne.TextWrapBreak
+	width := 0
 	for _, c := range credits {
-		c := c
-		button := widget.NewButton(c.name, func() {
-			nameLabel.SetText(c.name)
-			u, _ := url.Parse(c.url)
-			urlLabel.SetText(c.url)
-			urlLabel.SetURL(u)
-			entry.SetText(c.text)
-		})
-		list.Append(button)
+		l := len(c.name)
+		if l > width {
+			width = l
+		}
 	}
-	listContainer := widget.NewVScrollContainer(list)
+	list := widget.NewList(
+		func() int {
+			return len(credits)
+		},
+		func() fyne.CanvasObject {
+			dummy := strings.Repeat("*", width)
+			label := widget.NewLabel(dummy)
+			label.Alignment = fyne.TextAlignCenter
+			return label
+		},
+		func(id widget.ListItemID, item fyne.CanvasObject) {
+			item.(*widget.Label).SetText(credits[id].name)
+		},
+	)
+	list.OnSelected = func(id widget.ListItemID) {
+		c := credits[id]
+		nameLabel.SetText(c.name)
+		u, _ := url.Parse(c.url)
+		urlLabel.SetText(c.url)
+		urlLabel.SetURL(u)
+		entry.SetText(c.text)
+	}
+	list.Select(0)
 	text := widget.NewScrollContainer(entry)
 	license := fyne.NewContainerWithLayout(
 		layout.NewBorderLayout(header, nil, nil, nil),
 		header, text,
 	)
-	splitContainer := widget.NewHSplitContainer(listContainer, license)
+	splitContainer := widget.NewHSplitContainer(list, license)
 	splitContainer.SetOffset(0)
 	return splitContainer
 }
