@@ -64,10 +64,9 @@ func CreditsContainer() fyne.CanvasObject {
 		layout.NewBorderLayout(header, nil, nil, nil),
 		header, text,
 	)
-	return fyne.NewContainerWithLayout(
-		layout.NewBorderLayout(nil, nil, listContainer, nil),
-		listContainer, license,
-	)
+	splitContainer := widget.NewHSplitContainer(listContainer, license)
+	splitContainer.SetOffset(0)
+	return splitContainer
 }
 
 type credit struct {
