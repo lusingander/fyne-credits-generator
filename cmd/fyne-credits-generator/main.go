@@ -11,14 +11,20 @@ import (
 
 var (
 	pname   *string
-	old     *bool
+	target  *string
 	version *bool
 	help    *bool
 )
 
+var (
+	v1_3 = "1.3"
+	v1_4 = "1.4"
+	v2_0 = "2.0"
+)
+
 func parseFlags() {
 	pname = flag.String("package", "main", "set package name")
-	old = flag.Bool("old", false, "old style (Fyne v1.3.x or earlier)")
+	target = flag.String("target", v2_0, "target Fyne version (1.3|1.4|2.0)")
 	version = flag.Bool("version", false, "print version")
 	help = flag.Bool("help", false, "print help")
 	flag.Parse()
@@ -33,8 +39,12 @@ func printVersion() {
 	fmt.Fprintf(os.Stderr, "fyne-credits-generator version %s\n", credit.Version)
 }
 
+func validTarget(t string) bool {
+	return t == v1_3 || t == v1_4 || t == v2_0
+}
+
 func run() error {
-	if *help {
+	if *help || !validTarget(*target) {
 		printHelp()
 		return nil
 	}
@@ -47,7 +57,7 @@ func run() error {
 	if err != nil {
 		return err
 	}
-	fmt.Println(createCreditsGo(credits, *pname, *old))
+	fmt.Println(createCreditsGo(credits, *pname, *target))
 	return nil
 }
 

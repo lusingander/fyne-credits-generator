@@ -38,11 +38,14 @@ $ fyne-credits-generator -help
 
 ### old style
 
-This generated code makes use of the `widget.List`, which was added in Fyne v1.4.
-If you want to use Fyne v1.3.x or earlier, you can also use the style without the `List`.
+This generate code for Fyne v2.0 or later.
+If you want to generate code for Fyne v1.4 or earlier, you can specify the `target`.
+
+The components used by 1.4 and later are different from those used by 1.3 and earlier. So if you want to use Fyne v1.3.x or earlier, specify `target=1.3`.
 
 ```
-$ fyne-credits-generator -old > credits.go
+$ fyne-credits-generator -target=1.3 > credits.go
+$ fyne-credits-generator -target=1.4 > credits.go
 ```
 
 <img src="./resource/image-old.png" width=600>
