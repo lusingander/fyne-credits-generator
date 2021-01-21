@@ -1,10 +1,11 @@
 package main
 
 import (
-	"fyne.io/fyne"
-	"fyne.io/fyne/app"
-	"fyne.io/fyne/layout"
-	"fyne.io/fyne/widget"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/app"
+	"fyne.io/fyne/v2/container"
+	"fyne.io/fyne/v2/layout"
+	"fyne.io/fyne/v2/widget"
 )
 
 func main() {
@@ -13,9 +14,9 @@ func main() {
 	button := widget.NewButton("Show credits", func() {
 		CreditsWindow(fyne.CurrentApp(), fyne.NewSize(800, 400)).Show()
 	})
-	content := widget.NewVBox(
+	content := container.NewVBox(
 		label,
-		widget.NewHBox(
+		container.NewHBox(
 			layout.NewSpacer(),
 			button,
 			layout.NewSpacer(),

@@ -6,9 +6,10 @@ import (
 	"net/url"
 	"strings"
 
-	"fyne.io/fyne"
-	"fyne.io/fyne/layout"
-	"fyne.io/fyne/widget"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/container"
+	"fyne.io/fyne/v2/layout"
+	"fyne.io/fyne/v2/widget"
 )
 
 // CreditsWindow returns a window displaying a list of licenses.
@@ -23,7 +24,7 @@ func CreditsWindow(app fyne.App, size fyne.Size) fyne.Window {
 func CreditsContainer() fyne.CanvasObject {
 	nameLabel := widget.NewLabel("")
 	urlLabel := widget.NewHyperlink("", nil)
-	header := widget.NewVBox(nameLabel, urlLabel)
+	header := container.NewVBox(nameLabel, urlLabel)
 	entry := widget.NewMultiLineEntry()
 	entry.Wrapping = fyne.TextWrapBreak
 	width := 0
@@ -56,12 +57,12 @@ func CreditsContainer() fyne.CanvasObject {
 		entry.SetText(c.text)
 	}
 	list.Select(0)
-	text := widget.NewScrollContainer(entry)
+	text := container.NewScroll(entry)
 	license := fyne.NewContainerWithLayout(
 		layout.NewBorderLayout(header, nil, nil, nil),
 		header, text,
 	)
-	splitContainer := widget.NewHSplitContainer(list, license)
+	splitContainer := container.NewHSplit(list, license)
 	splitContainer.SetOffset(0)
 	return splitContainer
 }
@@ -106,8 +107,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 `,
 	},
 	{
-		"fyne.io/fyne",
-		"https://fyne.io/fyne",
+		"fyne.io/fyne/v2",
+		"https://fyne.io/fyne/v2",
 		`
 BSD 3-Clause License
 
@@ -188,6 +189,35 @@ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
 WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+`,
+	},
+	{
+		"github.com/fredbi/uri",
+		"https://github.com/fredbi/uri",
+		`
+The MIT License (MIT)
+
+Copyright (c) 2018 Frederic Bidon
+Copyright (c) 2015 Trey Tacon
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 `,
 	},
