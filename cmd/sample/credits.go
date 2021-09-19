@@ -58,7 +58,7 @@ func CreditsContainer() fyne.CanvasObject {
 	}
 	list.Select(0)
 	text := container.NewScroll(entry)
-	license := fyne.NewContainerWithLayout(
+	license := container.New(
 		layout.NewBorderLayout(header, nil, nil, nil),
 		header, text,
 	)
