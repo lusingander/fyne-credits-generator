@@ -26,9 +26,24 @@ func (c *Credit) FormattedText() string {
 	return strings.Replace(c.Text, "`", replacedBackquote, -1)
 }
 
+type collectOptions struct {
+	strict bool
+}
+
+type collectOption func(*collectOptions)
+
+func Strict(b bool) collectOption {
+	return func(o *collectOptions) { o.strict = b }
+}
+
 // Collect returns the license information collected and converted to Credit type.
-func Collect() ([]*Credit, error) {
-	buf, err := runGoCredits()
+func Collect(options ...collectOption) ([]*Credit, error) {
+	opts := &collectOptions{}
+	for _, opt := range options {
+		opt(opts)
+	}
+
+	buf, err := runGoCredits(opts)
 	if err != nil {
 		return nil, err
 	}
@@ -57,11 +72,21 @@ func newCredit(text string) *Credit {
 	}
 }
 
-func runGoCredits() (*bytes.Buffer, error) {
+func runGoCredits(opts *collectOptions) (*bytes.Buffer, error) {
 	buf := &bytes.Buffer{}
-	err := gocredits.Run([]string{"."} /* from current directory */, buf, os.Stderr)
+	args := buildGoCreditsArgs(opts)
+	err := gocredits.Run(args, buf, os.Stderr)
 	if err != nil {
 		return nil, err
 	}
 	return buf, nil
+}
+
+func buildGoCreditsArgs(opts *collectOptions) []string {
+	args := make([]string, 0)
+	if !opts.strict {
+		args = append(args, "-skip-missing")
+	}
+	args = append(args, ".") // from current directory
+	return args
 }

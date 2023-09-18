@@ -12,6 +12,7 @@ import (
 var (
 	pname   *string
 	target  *string
+	strict  *bool
 	version *bool
 	help    *bool
 )
@@ -25,6 +26,7 @@ var (
 func parseFlags() {
 	pname = flag.String("package", "main", "set package name")
 	target = flag.String("target", v2_0, "target Fyne version (1.3|1.4|2.0)")
+	strict = flag.Bool("strict", false, "error if license not found")
 	version = flag.Bool("version", false, "print version")
 	help = flag.Bool("help", false, "print help")
 	flag.Parse()
@@ -53,7 +55,7 @@ func run() error {
 		return nil
 	}
 
-	credits, err := credit.Collect()
+	credits, err := credit.Collect(credit.Strict(*strict))
 	if err != nil {
 		return err
 	}
