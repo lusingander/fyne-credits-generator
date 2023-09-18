@@ -6,7 +6,7 @@ Automatically generate credits window for the [Fyne](https://fyne.io/) applicati
 ## Installation
 
 ```
-$ go get github.com/lusingander/fyne-credits-generator/cmd/fyne-credits-generator
+$ go install github.com/lusingander/fyne-credits-generator/cmd/fyne-credits-generator@latest
 ```
 
 ## Usage
