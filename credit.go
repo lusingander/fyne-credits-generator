@@ -13,7 +13,7 @@ const (
 	splitterText    = "----------------------------------------------------------------"
 )
 
-// Credit represents the license text, repository name and URL.
+// Credit represents the license text, repository name, and URL.
 type Credit struct {
 	Name, URL, Text string
 }
@@ -36,7 +36,7 @@ func Strict(b bool) collectOption {
 	return func(o *collectOptions) { o.strict = b }
 }
 
-// Collect returns the license information collected and converted to Credit type.
+// Collect returns the license information collected and converted to a Credit type.
 func Collect(options ...collectOption) ([]*Credit, error) {
 	opts := &collectOptions{}
 	for _, opt := range options {
@@ -87,6 +87,6 @@ func buildGoCreditsArgs(opts *collectOptions) []string {
 	if !opts.strict {
 		args = append(args, "-skip-missing")
 	}
-	args = append(args, ".") // from current directory
+	args = append(args, ".") // from the current directory
 	return args
 }
